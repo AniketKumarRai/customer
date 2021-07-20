@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-2:876983010549:task-definition/customer-service-taskdef:1"
+        LoadBalancerInfo:
+          ContainerName: "customer-service-container-"
+          ContainerPort: "8085"
+        PlatformVersion: "LATEST"
